@@ -55,7 +55,7 @@ require_once(__DIR__ . "/includes/functions.php");
 <script>
 	function onSignIn(googleUser) {
   		var profile = googleUser.getBasicProfile();
-		console.log(profile);
+		console.log(googleUser.getAuthResponse().id_token);
  /* console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());

@@ -1,0 +1,16 @@
+<?php
+require_once(__DIR__ . "/google-api-php-client-2.2.0/vendor/autoload.php");
+
+$client = new Google_Client(['client_id' => "289322729020-s3kuiemg06568d5n0ehlmp1e1dmdstra.apps.googleusercontent.com"]);
+$payload = $client->verifyIdToken("eyJhbGciOiJSUzI1NiIsImtpZCI6ImMzYzBkNDhkYWZkZTY2ZGRiYzdkZDIwODNjZTU1NDUyMTg4ZmFlZTgifQ.eyJhenAiOiIyODkzMjI3MjkwMjAtczNrdWllbWcwNjU2OGQ1bjBlaGxtcDFlMWRtZHN0cmEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyODkzMjI3MjkwMjAtczNrdWllbWcwNjU2OGQ1bjBlaGxtcDFlMWRtZHN0cmEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDcxMjQzODU4MzQ3NTExNzQxMDgiLCJlbWFpbCI6InNvaGFpbHJhamRldjk3QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoibHlpMlphQ0VVcE9DUGRRRkdPa2xwZyIsImlzcyI6ImFjY291bnRzLmdvb2dsZS5jb20iLCJpYXQiOjE1MDI1MTI5MzgsImV4cCI6MTUwMjUxNjUzOCwibmFtZSI6IlNvaGFpbCBSYWpkZXYiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tLy1ZSDFPeHd3dFJmWS9BQUFBQUFBQUFBSS9BQUFBQUFBQUFBby9LQTc3MWRTY05kby9zOTYtYy9waG90by5qcGciLCJnaXZlbl9uYW1lIjoiU29oYWlsIiwiZmFtaWx5X25hbWUiOiJSYWpkZXYiLCJsb2NhbGUiOiJlbiJ9.sYnKs9gfN0Su6I1ltjtx6U3_RJzvbaNWiEg1HuL2nAKW3bb3Mp4cXh9cLsVOZH2wUADcVH9YV_xmpNFFRotSo1qyc7xGVORdY1yC2dETDM1toHfe9SSVOYs6d4hKNnYsmguOBp8nJj3SoePKcbBXqf4cvRxCbvuZ6BiofL7TSiBPPD04y8_Xv7b_p3mkQV384jS3Bita57LVcVJE-uDql4CHJXgARv05SWfFNvr5PJUaExoW4Ab-0Cxnn91sWk5OIstllDxMgHAnrVSSiBpFLWIJlpmyg3XX8mC8nIqfprxyP9y5slkTbr1VrA7FLzRmI6SiqMocJkiKrMPE4lD9Sh");
+if ($payload) {
+  $userid = $payload['sub'];
+  // If request specified a G Suite domain:
+  //$domain = $payload['hd'];
+	echo "<pre>";
+	print_r($payload);
+} else {
+  // Invalid ID token
+}
+
+?>
