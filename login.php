@@ -1,5 +1,10 @@
 <?php
+session_start();
 require_once(__DIR__ . "/includes/functions.php");
+if(isset($_SESSION['studentName']) && isset($_SESSION['studentMail'])){
+	header("Location: index.php");
+	die();
+}
 ?>
 <!doctype html>
 <html>
@@ -18,6 +23,8 @@ require_once(__DIR__ . "/includes/functions.php");
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+<script src="js/sweetalert.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css/sweetalert.css">
 </head>
 
 <body style="padding-top: 70px">
@@ -49,17 +56,37 @@ require_once(__DIR__ . "/includes/functions.php");
   <div class="row">
     <div class="col-md-12">
       <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      <span id="loading"></span>
     </div>
   </div>
 </div>
 <script>
 	function onSignIn(googleUser) {
-  		var profile = googleUser.getBasicProfile();
-		console.log(googleUser.getAuthResponse().id_token);
- /* console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.*/
+		$("#loading").html('<img src="img/loading.gif" width="150px">');
+		$.ajax({
+			url: "controllers/login-process.php",
+			method: "GET",
+			beforeSend: function(xhr){
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			},
+			data: {'gToken': googleUser.getAuthResponse().id_token},
+			success: function(res){
+				if(res.status == 300){
+					swal("Error", res.message, "error");
+					var auth2 = gapi.auth2.getAuthInstance();
+    				auth2.signOut().then(function () {
+      					console.log('User signed out.');
+						$("#loading").html('');
+    				});
+				} else if(res.status == 200) {
+					var auth2 = gapi.auth2.getAuthInstance();
+    				auth2.signOut().then(function () {
+      					console.log('User signed out.');
+    				});
+					window.location.replace("index.php");
+				}
+			}
+		});
 }
 </script> 
 <script src="js/jquery-1.11.3.min.js"></script> 

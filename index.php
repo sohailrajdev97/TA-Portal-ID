@@ -1,9 +1,14 @@
-<!doctype html>
 <?php
+session_start();
 require_once(__DIR__ . "/includes/functions.php");
+if(!isset($_SESSION['studentName']) || !isset($_SESSION['studentMail'])){
+	header("Location: login.php");
+	die();	
+}
 ?>
+<!doctype html>
 <!-- InstanceBeginEditable name="phpIncludes" --><!-- InstanceEndEditable -->
-<html><!-- InstanceBegin template="/TA-Portal-ID/templates/student.dwt" codeOutsideHTMLIsLocked="true" -->
+<html><!-- InstanceBegin template="/Templates/student.dwt" codeOutsideHTMLIsLocked="true" -->
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +17,7 @@ require_once(__DIR__ . "/includes/functions.php");
 <title>Template</title>
 <!-- InstanceEndEditable -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/main.css" rel="stylesheet" type="text/css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -35,6 +41,8 @@ require_once(__DIR__ . "/includes/functions.php");
       <div class="collapse navbar-collapse" id="topFixedNavbar1">
 <ul class="nav navbar-nav navbar-right">
           <li><a href="http://id.bits-hyderabad.ac.in">Home</a></li>
+          <li><a href="#">Application Status</a></li>
+          <li><a href="logout.php">Logout</a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
