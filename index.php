@@ -31,7 +31,7 @@ if(!isset($_SESSION['studentName']) || !isset($_SESSION['studentMail'])){
 
 <body style="padding-top: 70px">
 <div class="container">
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -40,7 +40,13 @@ if(!isset($_SESSION['studentName']) || !isset($_SESSION['studentMail'])){
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="topFixedNavbar1">
 <ul class="nav navbar-nav navbar-right">
-          <li><a href="http://id.bits-hyderabad.ac.in">Home</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li class="dropdown"><a href="a" class="dropdown-toggle" data-toggle="dropdown">Apply Online<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <li><a href="apply-ta-divison.php">Division Work</a></li>
+          <li><a href="apply-ta-course.php">Course Work</a></li>
+        </ul>
+          </li>
           <li><a href="#">Application Status</a></li>
           <li><a href="logout.php">Logout</a></li>
         </ul>

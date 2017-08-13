@@ -4,3 +4,8 @@ h1 {
 	color: #1F1A6E;
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
 }
+@media (max-width:366px){
+.navbar-brand   {
+	font-size: x-small;
+}
+}

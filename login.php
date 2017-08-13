@@ -29,7 +29,7 @@ if(isset($_SESSION['studentName']) && isset($_SESSION['studentMail'])){
 
 <body style="padding-top: 70px">
 <div class="container">
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid"> 
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
