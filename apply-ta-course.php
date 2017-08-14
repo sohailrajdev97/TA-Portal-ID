@@ -14,7 +14,7 @@ if(!isset($_SESSION['studentName']) || !isset($_SESSION['studentMail'])){
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Template</title>
+<title>Course Work Application</title>
 <!-- InstanceEndEditable -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="css/main.css" rel="stylesheet" type="text/css">
@@ -61,9 +61,39 @@ if(!isset($_SESSION['studentName']) || !isset($_SESSION['studentMail'])){
   <div class="row">
     <div class="col-md-12">
     <!-- InstanceBeginEditable name="EditRegion3" -->
-      <h1>Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloremque cum maxime architecto veritatis id omnis magni dignissimos sint eius, ea, iure praesentium aspernatur error incidunt, quos harum blanditiis quo.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit quidem possimus molestiae rerum incidunt iste, consequatur laborum ullam accusantium cumque in, voluptas porro autem repudiandae ipsum, officiis fugiat debitis voluptatem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quaerat, quo unde quod eos delectus cupiditate eligendi quia iusto repudiandae corporis dignissimos optio! Numquam dicta vero, corporis quis, recusandae doloribus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat enim suscipit, ullam minus. Sapiente qui quas, cupiditate quo quos libero quidem? Nobis, earum, laudantium minus incidunt natus expedita placeat non.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque optio veritatis quam iure rem culpa sequi beatae natus ab dolorum, temporibus, alias in nemo vel quaerat aut ullam quas officiis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, quisquam consequatur esse quasi perspiciatis inventore velit saepe dolore hic aliquid tempora nisi sunt deleniti, iusto itaque dicta omnis earum. Accusamus.Lorem ipsum door sit amet, consectetur adipisicing elit. Soluta sunt facere praesentium corporis odio vitae ab fugiat ut, earum nisi, natus, error incidunt cupiditate fugit minima quae doloribus repudiandae obcaecati.</p>
-<!-- InstanceEndEditable -->
+      <div class="row">
+        <div class="col-md-12"><h1>Course Work Application</h1></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+        	<form>
+        		<div class="form-group">
+        			<label for="id-number">ID Number :</label>
+        			<input type="text" id="id-number" class="form-control">
+        		</div>
+        		<div class="form-group">
+        			<label for="cgpa">CGPA :</label>
+        			<input type="text" id="cgpa" class="form-control">
+        		</div>
+        		<div class="form-group">
+        			<label for="course-number">Course Number :</label>
+        			<select id="course-number" class="form-control">
+        				<option value="nil">-----SELECT-----</option>
+        			</select>
+        		</div>
+        		<div class="form-group">
+        			<label for="completion-status">Have you completed this course ? If yes, during which semester along with the secured grade ?</label>
+					<textarea id="completion-status" class="form-control"></textarea>
+        		</div>
+        		<div class="form-group">
+        			<label for="hours">How many hours can you spend per week for this assistantship ?</label>
+        			<input type="text" id="hours" class="form-control">
+        		</div>
+        		<button class="btn btn-primary" type="submit" id="submit">Submit</button>
+        	</form>
+        </div>
+      </div>     
+      <!-- InstanceEndEditable -->
  </div>
   </div>
 </div>
